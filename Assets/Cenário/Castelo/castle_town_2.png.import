@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4bh28mqbskmx"
-path.s3tc="res://.godot/imported/castle_town_1.png-041140956d2205db2fa1a905c98e2306.s3tc.ctex"
+uid="uid://pys7nnn20t1m"
+path.s3tc="res://.godot/imported/castle_town_2.png-0b98693e5ce13f0315c98efeab48e75f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6df13e681b42dd4063fc1f8d133f7bb7"
+"md5": "8413ebf4c46482db1288e9780ff32879"
 }
 
 [deps]
 
-source_file="res://Assets/Cenário/castle_town_1.png"
-dest_files=["res://.godot/imported/castle_town_1.png-041140956d2205db2fa1a905c98e2306.s3tc.ctex"]
+source_file="res://Assets/Cenário/Castelo/castle_town_2.png"
+dest_files=["res://.godot/imported/castle_town_2.png-0b98693e5ce13f0315c98efeab48e75f.s3tc.ctex"]
 
 [params]
 
