@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://tohj82mh5ufs"]
+
+[ext_resource type="PackedScene" uid="uid://8m5y1uic0p5e" path="res://Assets/Eastereggs/Tardis/8th_doctors_tardis_hudolin_tardis.glb" id="1_3ijx5"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_3ijx5")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 1.7566799, 0)
