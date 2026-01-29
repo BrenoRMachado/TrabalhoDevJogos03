@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://enisiaa0pmox"]
+
+[ext_resource type="Script" uid="uid://dt57pu37a1q4q" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2snw"]
+bg_color = Color(0.288518, 0.288518, 0.2885179, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37p78"]
+bg_color = Color(0.63529414, 0.03137255, 0.07058824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="HUD" type="CanvasLayer" unique_id=979894810]
+script = ExtResource("1_37p78")
+
+[node name="Mira" type="ColorRect" parent="." unique_id=1610641213]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarraVida" type="ProgressBar" parent="." unique_id=249294298]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -49.0
+offset_right = 278.0
+offset_bottom = -22.0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_n2snw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_37p78")
+value = 50.0
+show_percentage = false
