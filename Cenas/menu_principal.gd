@@ -21,8 +21,6 @@ func _on_btn_jogar_pressed():
 func _on_btn_creditos_pressed():
 	if cena_dos_creditos:
 		get_tree().change_scene_to_file(cena_dos_creditos)
-	else:
-		print("O botão CRÉDITOS funciona! (Falta criar a cena de créditos)")
 
 func _on_btn_sair_pressed():
 	# Fecha o jogo
