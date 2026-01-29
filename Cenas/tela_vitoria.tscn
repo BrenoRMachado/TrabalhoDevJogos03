@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bspgsc7cyyx0u"]
 
-[ext_resource type="Script" uid="uid://d1cwynxsjndi" path="res://tela_vitoria.gd" id="1_sw3hn"]
+[ext_resource type="Script" uid="uid://d1cwynxsjndi" path="res://Cenas/tela_vitoria.gd" id="1_sw3hn"]
 [ext_resource type="Texture2D" uid="uid://cgl8muiri0ynt" path="res://Assets/Vitoria/TelaVitoria.png" id="2_po3aj"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_yxaj2"]
 

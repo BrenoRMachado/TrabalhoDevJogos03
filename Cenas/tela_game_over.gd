@@ -10,4 +10,4 @@ func _on_btn_reiniciar_pressed():
 
 func _on_btn_menu_pressed():
 	# Troca para o menu principal
-	get_tree().change_scene_to_file("res://MenuPrincipal.tscn")
+	get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")
