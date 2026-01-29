@@ -12,7 +12,7 @@ extends CharacterBody3D
 
 @export var sensibilidade_mouse = 0.005
 
-const CENA_FLECHA = preload("res://Assets/Player/Skeleton_Arrow.gltf")
+const CENA_FLECHA = preload("res://Cenas/Flecha.tscn")
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
 var esta_atacando = false
@@ -78,7 +78,12 @@ func ataque():
 	
 	var flecha = CENA_FLECHA.instantiate()
 	get_tree().root.add_child(flecha)
-	flecha.global_transform = spawn_flecha.global_transform
+	
+	flecha.global_position = spawn_flecha.global_position
+	
+	flecha.global_rotation = Vector3(0, visual.global_rotation.y, 0)
+	
+	flecha.rotate_object_local(Vector3.RIGHT, deg_to_rad(-90))
 	
 	await animacao.animation_finished
 	esta_atacando = false
