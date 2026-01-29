@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://br5jpf1ne6v8r"]
+[gd_scene load_steps=5 format=3 uid="uid://br5jpf1ne6v8r"]
 
 [ext_resource type="PackedScene" uid="uid://bs0wty6kxewsi" path="res://Assets/Cenário/Castelo/castle_town.glb" id="1_66k3x"]
 [ext_resource type="Script" uid="uid://be2hii85tffta" path="res://Cenas/Cenario/Castelo/castelo.gd" id="2_3aanm"]
 [ext_resource type="PackedScene" uid="uid://tohj82mh5ufs" path="res://Cenas/Cenario/Tardis/tardis.tscn" id="3_avuae"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avuae"]
+size = Vector3(92.70935, 1, 92.254395)
 
 [node name="Castelo" instance=ExtResource("1_66k3x")]
 script = ExtResource("2_3aanm")
@@ -78,3 +81,10 @@ transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0, 0)
 
 [node name="Sketchfab_Scene" parent="." index="1" instance=ExtResource("3_avuae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8926973, 0, 46.3972)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.725874, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4866333, 0, 9.218018)
+shape = SubResource("BoxShape3D_avuae")

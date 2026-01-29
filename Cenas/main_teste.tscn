@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfw8fu0i7ardb"]
 
-[ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_v4mh4"]
-[ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player.tscn" id="2_gwakk"]
+[ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
+[ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player.tscn" id="2_5mohv"]
 
 [node name="Node" type="Node"]
 
-[node name="Castelo" parent="." instance=ExtResource("1_v4mh4")]
+[node name="Castelo" parent="." instance=ExtResource("1_7e845")]
 
-[node name="Player" parent="." instance=ExtResource("2_gwakk")]
+[node name="Player" parent="." instance=ExtResource("2_5mohv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77181756, 0)
 
 [node name="DirectionalLight2D" type="DirectionalLight3D" parent="."]

@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 @export var andando = 5.0
 @export var correndo = 8.0
-@export var forca_pulo = 8.0
+@export var forca_pulo = 11.0
 @export var rotacao = 10.0
 
 @export var sensibilidade_mouse = 0.005
