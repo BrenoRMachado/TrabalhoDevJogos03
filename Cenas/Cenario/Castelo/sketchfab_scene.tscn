@@ -1,20 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://qhoxskvurxii"]
+[gd_scene format=3 uid="uid://qhoxskvurxii"]
 
 [ext_resource type="PackedScene" uid="uid://bs0wty6kxewsi" path="res://Assets/Cenário/Castelo/castle_town.glb" id="1_cscbg"]
 
-[node name="Castelo" instance=ExtResource("1_cscbg")]
+[node name="Castelo" unique_id=1477534762 instance=ExtResource("1_cscbg")]
 
-[node name="boardPieces_1" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" index="0"]
+[node name="boardPieces_1" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" parent_id_path=PackedInt32Array(497505300) index="0" unique_id=1084442284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.896553, -18.848124, -1.3454075)
 
-[node name="boardPieces (1)_212" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" index="1"]
+[node name="boardPieces (1)_212" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" parent_id_path=PackedInt32Array(497505300) index="1" unique_id=1108335677]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.896553, -18.848124, -1.3454075)
 
-[node name="boardPieces (2)_1822" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" index="2"]
+[node name="boardPieces (2)_1822" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" parent_id_path=PackedInt32Array(497505300) index="2" unique_id=1797022019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.896553, -18.848124, -1.3454075)
 
-[node name="boardPieces (3)_1894" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" index="3"]
+[node name="boardPieces (3)_1894" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" parent_id_path=PackedInt32Array(497505300) index="3" unique_id=378915938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.896553, -18.848124, -1.3454075)
 
-[node name="Object_555" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0/ground_2274" index="0"]
-transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0, 0)
+[node name="Object_555" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0/ground_2274" parent_id_path=PackedInt32Array(303025253) index="0" unique_id=1028834031]
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, -5.169879e-26, 0.55, 0, 0, 0)
