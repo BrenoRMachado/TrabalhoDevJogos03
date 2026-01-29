@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfw8fu0i7ardb"]
+
+[ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_v4mh4"]
+[ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player.tscn" id="2_gwakk"]
+
+[node name="Node" type="Node"]
+
+[node name="Castelo" parent="." instance=ExtResource("1_v4mh4")]
+
+[node name="Player" parent="." instance=ExtResource("2_gwakk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77181756, 0)
+
+[node name="DirectionalLight2D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 363.4406, 0)
+light_energy = 1.825
