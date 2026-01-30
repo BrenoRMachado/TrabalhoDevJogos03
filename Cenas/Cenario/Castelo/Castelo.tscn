@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://br5jpf1ne6v8r"]
+[gd_scene format=3 uid="uid://br5jpf1ne6v8r"]
 
 [ext_resource type="PackedScene" uid="uid://bs0wty6kxewsi" path="res://Assets/Cenário/Castelo/castle_town.glb" id="1_66k3x"]
 [ext_resource type="Script" uid="uid://be2hii85tffta" path="res://Cenas/Cenario/Castelo/castelo.gd" id="2_3aanm"]
@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_avuae"]
 size = Vector3(92.70935, 1, 92.254395)
 
-[node name="Castelo" instance=ExtResource("1_66k3x")]
+[node name="Castelo" unique_id=1568044996 instance=ExtResource("1_66k3x")]
 script = ExtResource("2_3aanm")
 
 [node name="boardPieces_1" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0" index="0"]
@@ -77,14 +77,14 @@ visible = false
 visible = false
 
 [node name="Object_555" parent="Sketchfab_model/root/GLTF_SceneRootNode/tutorial_castle_town_0/ground_2274" index="0"]
-transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0, 0)
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, -2.5849394e-25, 0.55, 0, 0.225, 0)
 
-[node name="Sketchfab_Scene" parent="." index="1" instance=ExtResource("3_avuae")]
+[node name="Sketchfab_Scene" parent="." index="1" unique_id=1356550272 instance=ExtResource("3_avuae")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8926973, 0, 46.3972)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=2045574194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.725874, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=480724552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4866333, 0, 9.218018)
 shape = SubResource("BoxShape3D_avuae")
