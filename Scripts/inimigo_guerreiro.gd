@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var distancia_ataque = 1.5
 @export var vida = 3
 @export var player : CharacterBody3D
+var esta_morto = false
 
 @onready var pathfinding = $NavigationAgent3D
 @onready var visual = $Knight
@@ -26,6 +27,9 @@ func _ready() -> void:
 	selection.add_child(no_perseguir)
 
 func _physics_process(_delta: float) -> void:
+	if esta_morto:
+		return
+
 	if selection:
 		selection.process()
 	move_and_slide()
@@ -74,10 +78,18 @@ func atacar():
 	pode_atacar = true
 	
 func receber_dano():
+	if esta_morto:
+		return
+
 	vida -= 1
 	print("Inimigo atingido! Vida: ", vida)
 	animacao.play("Rig_Medium_General/Hit_A")
+	
 	if vida <= 0:
+		esta_morto = true
+		velocity = Vector3.ZERO
 		animacao.play("Rig_Medium_General/Death_A")
 		await animacao.animation_finished
 		queue_free()
+	else:
+		animacao.play("Rig_Medium_General/Hit_A")
