@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://enisiaa0pmox" path="res://Cenas/Telas/hud.tscn" id="4_ujeci"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
+[ext_resource type="PackedScene" uid="uid://csx7j3gulubun" path="res://Cenas/Cenario/Delorean/delorean.tscn" id="6_nvojd"]
+[ext_resource type="Texture2D" uid="uid://dwa5lwumap0gi" path="res://Assets/Eastereggs/Caniato/Caniato.jpeg" id="7_d40kt"]
 
 [sub_resource type="GDScript" id="GDScript_qtva1"]
 script/source = "extends Node
@@ -107,9 +109,14 @@ autoplay = true
 [node name="Player" parent="." unique_id=825621865 node_paths=PackedStringArray("hud") instance=ExtResource("2_5mohv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5966016, 7.203039)
 hud = NodePath("../HUD")
+correndo = 7.0
+forca_pulo = 8.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1945084406]
 navigation_mesh = SubResource("NavigationMesh_5mohv")
+
+[node name="Delorean" parent="NavigationRegion3D" unique_id=21224686 instance=ExtResource("6_nvojd")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -28.479109, -0.013883352, 36.834866)
 
 [node name="Castelo" parent="NavigationRegion3D" unique_id=774096239 instance=ExtResource("1_7e845")]
 
@@ -208,6 +215,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5441008, 4.115506, 44.84901
 light_color = Color(0.9999998, 0.9563783, 0.81640196, 1)
 omni_range = 5.853
 omni_attenuation = -0.528
+
+[node name="light17" type="OmniLight3D" parent="NavigationRegion3D" unique_id=1952659601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.70446, 40.20482, -43.54466)
+light_color = Color(0.6814851, 0.35635006, 0.89519095, 1)
+omni_range = 28.626
+omni_attenuation = -0.874
+
+[node name="light18" type="OmniLight3D" parent="NavigationRegion3D" unique_id=2055490246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.707497, 1.8993821, 33.00446)
+light_color = Color(0.4119708, 0.23847812, 0.8463598, 1)
+omni_range = 2.752
+omni_attenuation = 0.281
+
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D" unique_id=1618357921]
+transform = Transform3D(0.51306194, 0, 0.8583516, 0, 1, 0, -0.8583516, 0, 0.51306194, 38.658012, 3.625016, -18.068544)
+texture = ExtResource("7_d40kt")
 
 [node name="SpawnPoints" type="Node3D" parent="." unique_id=639788288]
 
