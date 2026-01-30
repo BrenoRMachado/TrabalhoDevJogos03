@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bmf8yyjp1rhmi"]
 
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
-[ext_resource type="Script" uid="uid://bfh1pkbtfuf0x" path="res://Cenas/Jogo/main.gd" id="1_ujeci"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player/Player.tscn" id="2_5mohv"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
@@ -23,7 +22,6 @@ ambient_light_color = Color(0.44524276, 0.7532518, 1, 1)
 tonemap_mode = 2
 
 [node name="Node" type="Node" unique_id=561467103]
-script = ExtResource("1_ujeci")
 
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=627705422]
 stream = ExtResource("5_b43sg")
@@ -54,8 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.221885, 0, 10.850341)
 
 [node name="inimigo5" type="Marker3D" parent="SpawnPoints" unique_id=636170486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.890423, 0, -8.256617)
-
-[node name="InimigosVivos" type="Node3D" parent="." unique_id=877596849]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1213566444]
 transform = Transform3D(0.97315264, 0.1611387, 0.16434197, -0.20964998, 0.32595006, 0.92184776, 0.09497807, -0.93155295, 0.35098186, 0, 78.51785, 0)
