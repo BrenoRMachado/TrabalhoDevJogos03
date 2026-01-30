@@ -6,15 +6,16 @@ extends Node3D
 @onready var area_deteccao = $Area3D
 
 var direcao_voo = Vector3.ZERO
+var atingiu = false
 
 func _ready() -> void:
-	area_deteccao.body_entered.connect(_on_area_3d_body_entered)
 	get_tree().create_timer(tempo_vida).timeout.connect(queue_free)
 
 func _physics_process(delta: float) -> void:
 	var para_frente = -global_transform.basis.y
-	global_position += para_frente * velocidade * delta
+	if !atingiu:
+		global_position += para_frente * velocidade * delta
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not body is CharacterBody3D:
-		queue_free()
+		atingiu = true
