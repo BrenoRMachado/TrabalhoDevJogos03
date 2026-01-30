@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player.tscn" id="2_5mohv"]
+[ext_resource type="PackedScene" uid="uid://dn8bcd4j8td2s" path="res://Cenas/menu_pausa.tscn" id="2_xufyc"]
 [ext_resource type="PackedScene" uid="uid://du51qxu4nq81c" path="res://Cenas/Inimigo_Arqueiro.tscn" id="3_5mohv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5mohv"]
@@ -25,3 +26,5 @@ player = NodePath("../Player")
 navigation_mesh = SubResource("NavigationMesh_5mohv")
 
 [node name="Castelo" parent="NavigationRegion3D" unique_id=774096239 instance=ExtResource("1_7e845")]
+
+[node name="MenuPausa" parent="." unique_id=1331285902 instance=ExtResource("2_xufyc")]
