@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var correndo = 8.0
 @export var forca_pulo = 11.0
 @export var rotacao = 10.0
+@export var vida = 5
 
 @export var sensibilidade_mouse = 0.005
 
@@ -87,3 +88,12 @@ func ataque():
 	
 	await animacao.animation_finished
 	esta_atacando = false
+	
+func receber_dano():
+	vida -= 1
+	print("Player recebeu dano! Vida restante: ", vida)
+	animacao.play("Rig_Medium_General/Hit_A")
+	if vida <= 0:
+		animacao.play("Rig_Medium_General/Death_A")
+		await animacao.animation_finished
+		get_tree().change_scene_to_file("res://Cenas/Telas/tela_game_over.tscn")

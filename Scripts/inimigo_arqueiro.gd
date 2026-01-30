@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export var velocidade = 3.0
 @export var distancia_ataque = 10.0
-@export var vida = 3
+@export var vida = 1
 @export var player : CharacterBody3D
 @export var CENA_FLECHA : PackedScene = preload("res://Cenas/Arqueiro/Flecha_Inimigo.tscn")
 
@@ -70,3 +70,13 @@ func atacar():
 	animacao.play("Rig_Medium_General/Idle_A")
 	await get_tree().create_timer(2.0).timeout
 	pode_atirar = true
+	
+func receber_dano():
+	vida -= 1
+	print("Inimigo atingido! Vida: ", vida)
+	animacao.play("Rig_Medium_General/Hit_A")
+	
+	if vida <= 0:
+		animacao.play("Rig_Medium_General/Death_A")
+		await animacao.animation_finished
+		queue_free()
