@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bhn204tads38g" path="res://Scripts/tela_game_over.gd" id="1_k17kg"]
 [ext_resource type="Texture2D" uid="uid://cbtglje8auacc" path="res://Assets/GameOver/DerrotaJogo.png" id="2_jos3i"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_k6eyx"]
+[ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_1ov0e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k766o"]
 font = ExtResource("3_k6eyx")
@@ -74,5 +75,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Voltar ao Menu"
 
+[node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=1521254610]
+stream = ExtResource("4_1ov0e")
+volume_db = -25.0
+
+[connection signal="mouse_entered" from="VBoxContainer/BtnReiniciar" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/BtnMenu" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
