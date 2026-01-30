@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cy4jqs66y8i83"]
 
 [ext_resource type="PackedScene" uid="uid://bhw82e1a2aubk" path="res://Assets/Player/Skeleton_Arrow.gltf" id="1_gub5g"]
-[ext_resource type="Script" uid="uid://ddv3dlb1rq4fs" path="res://Cenas/flecha.gd" id="2_dl17f"]
+[ext_resource type="Script" uid="uid://ddv3dlb1rq4fs" path="res://Scripts/flecha.gd" id="2_dl17f"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gub5g"]
 height = 0.73147583
