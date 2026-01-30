@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://k2o6qbjgw8nj" path="res://Scripts/menu_principal.gd" id="1_ul6ys"]
 [ext_resource type="Texture2D" uid="uid://c4p15ma5qhpg2" path="res://Assets/Menu/MenuJogo3.png" id="2_ns3he"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_fa1tu"]
+[ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_7f1x0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6518"]
 font = ExtResource("3_fa1tu")
@@ -86,6 +87,13 @@ text = "The Rogue"
 label_settings = SubResource("LabelSettings_a6518")
 metadata/_edit_use_anchors_ = true
 
+[node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=1990971555]
+stream = ExtResource("4_7f1x0")
+volume_db = -25.0
+
+[connection signal="mouse_entered" from="VBoxContainer/BtnJogar" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnJogar" to="." method="_on_btn_jogar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/BtnCreditos" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnCreditos" to="." method="_on_btn_creditos_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/BtnSair" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnSair" to="." method="_on_btn_sair_pressed"]
