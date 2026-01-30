@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dimsqf3gqik55" path="res://Assets/Creditos/TelaCreditos.png" id="2_uelup"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_ls7gg"]
 [ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_d2n4h"]
+[ext_resource type="AudioStream" uid="uid://dcme4xkk170p7" path="res://Assets/Sons/Musica/Intro.ogg" id="5_vvrht"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5swmy"]
 font = ExtResource("3_ls7gg")
@@ -73,9 +74,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -152.5
-offset_top = -228.5
+offset_top = -241.0
 offset_right = 152.5
-offset_bottom = 258.5
+offset_bottom = 257.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -95,13 +96,21 @@ Inimigos por [url=https://kaylousberg.itch.io/kaykit-adventurers]Kaykit[/url]
 Mapa por [url=https://sketchfab.com/3d-models/castle-town-dc23d240d9b54fb594f0a953a46e7588]SketchFab[/url]
 Delorian por [url=https://sketchfab.com/3d-models/delorean-time-machine-low-poly-a36c5afa1bb24e16a3adfbcf08eb9390]SketchFab[/url]
 Tardis por [url=https://sketchfab.com/3d-models/8th-doctors-tardis-hudolin-tardis-34bdcd91ffed4df99a86e14ff16e4724#download]SketchFab[/url]
-
+Efeitos Sonoros por [url=https://pixabay.com/pt/sound-effects/]Pixabay[/url]
+Som de Hover por [url=https://opengameart.org]OpenGameArt[/url]
+Musica Vitória [url=www.youtube.com/watch?si=wpFLP_8SYS-XLLlj&v=Y8JPXwst6P4&feature=youtu.be]YouTube[/url]
+Musicas de Fundo [url=https://davidkbd.itch.io/purgatory-extreme-metal-music-pack]davidkbd[/url]
 [/center]"
 fit_content = true
 
 [node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=1302704457]
 stream = ExtResource("4_d2n4h")
 volume_db = -25.0
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1987700152]
+stream = ExtResource("5_vvrht")
+volume_db = -18.0
+autoplay = true
 
 [connection signal="mouse_entered" from="BtnVoltar" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="BtnVoltar" to="." method="_on_btn_voltar_pressed"]
