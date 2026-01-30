@@ -12,7 +12,7 @@ extends CharacterBody3D
 
 @export var sensibilidade_mouse = 0.005
 
-const CENA_FLECHA = preload("res://Cenas/Flecha.tscn")
+const CENA_FLECHA = preload("res://Cenas/Player/Flecha.tscn")
 
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
 var esta_atacando = false

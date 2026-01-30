@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var distancia_ataque = 10.0
 @export var vida = 3
 @export var player : CharacterBody3D
-@export var CENA_FLECHA : PackedScene = preload("res://Cenas/Flecha.tscn")
+@export var CENA_FLECHA : PackedScene = preload("res://Cenas/Arqueiro/Flecha_Inimigo.tscn")
 
 @onready var pathfinding = $NavigationAgent3D
 @onready var visual = $Ranger
