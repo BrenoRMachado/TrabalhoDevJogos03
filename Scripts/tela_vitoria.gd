@@ -8,7 +8,7 @@ func _ready():
 
 func _on_btn_menu_pressed():
 	# Volta para o menu
-	get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Telas/menu_principal.tscn")
 
 func _on_btn_sair_pressed():
 	# Fecha o jogo com chave de ouro

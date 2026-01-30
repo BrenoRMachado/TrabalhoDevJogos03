@@ -8,11 +8,11 @@ func _ready():
 
 func _on_btn_reiniciar_pressed():
 	# Recarrega a cena atual (o jogo recomeça)
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Cenas/Jogo/main_teste.tscn")
 
 func _on_btn_menu_pressed():
 	# Troca para o menu principal
-	get_tree().change_scene_to_file("res://Cenas/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Telas/menu_principal.tscn")
 
 # --- FUNÇÃO DO SOM DE HOVER ---
 # Esta é a função que todos os botões vão usar
