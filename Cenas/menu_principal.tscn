@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbt0ydoan2173"]
 
-[ext_resource type="Script" uid="uid://k2o6qbjgw8nj" path="res://Cenas/menu_principal.gd" id="1_ul6ys"]
+[ext_resource type="Script" uid="uid://k2o6qbjgw8nj" path="res://Scripts/menu_principal.gd" id="1_ul6ys"]
 [ext_resource type="Texture2D" uid="uid://c4p15ma5qhpg2" path="res://Assets/Menu/MenuJogo3.png" id="2_ns3he"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_fa1tu"]
 
@@ -16,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ul6ys")
+cena_do_jogo = "uid://tfai8i3hmmv4"
 cena_dos_creditos = "uid://d1ohrk405xgge"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=213042363]
