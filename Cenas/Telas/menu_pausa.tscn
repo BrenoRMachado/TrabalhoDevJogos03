@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dg58b2lgxxl35"]
+[gd_scene format=3 uid="uid://dwuni6iiumepi"]
 
 [ext_resource type="Script" uid="uid://y6pd5pat5xuo" path="res://menu_pausa.gd" id="1_jd2x8"]
 [ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="2_3ml7n"]

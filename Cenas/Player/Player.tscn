@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8erec1d0nxrx"]
+[gd_scene format=3 uid="uid://b8erec1d0nxrx"]
 
 [ext_resource type="Script" uid="uid://dq7w823g1vs82" path="res://Scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="PackedScene" uid="uid://bvol50v2cgqwj" path="res://Cenas/Esqueleto.tscn" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://bvol50v2cgqwj" path="res://Cenas/Player/Esqueleto.tscn" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
 radius = 0.609375

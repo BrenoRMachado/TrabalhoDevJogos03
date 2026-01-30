@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du51qxu4nq81c"]
 
-[ext_resource type="Script" uid="uid://bs1e1ets0hlsy" path="res://Scripts/inimigo_arqueiro.gd" id="1_nes6r"]
-[ext_resource type="PackedScene" uid="uid://x2m2w15gobqg" path="res://Cenas/Arqueiro.tscn" id="2_j7pl5"]
+[ext_resource type="Script" path="res://Scripts/inimigo_arqueiro.gd" id="1_nes6r"]
+[ext_resource type="PackedScene" uid="uid://x2m2w15gobqg" path="res://Cenas/Arqueiro/Arqueiro.tscn" id="2_j7pl5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_541s1"]
 radius = 0.5463867
