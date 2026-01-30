@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bt2bo78gd4brw" path="res://Scripts/tela_creditos.gd" id="1_ep8v7"]
 [ext_resource type="Texture2D" uid="uid://dimsqf3gqik55" path="res://Assets/Creditos/TelaCreditos.png" id="2_uelup"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_ls7gg"]
+[ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_d2n4h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5swmy"]
 font = ExtResource("3_ls7gg")
@@ -98,5 +99,10 @@ Tardis por [url=https://sketchfab.com/3d-models/8th-doctors-tardis-hudolin-tardi
 [/center]"
 fit_content = true
 
+[node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=1302704457]
+stream = ExtResource("4_d2n4h")
+volume_db = -25.0
+
+[connection signal="mouse_entered" from="BtnVoltar" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="BtnVoltar" to="." method="_on_btn_voltar_pressed"]
 [connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]

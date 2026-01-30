@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d1cwynxsjndi" path="res://Scripts/tela_vitoria.gd" id="1_sw3hn"]
 [ext_resource type="Texture2D" uid="uid://cgl8muiri0ynt" path="res://Assets/Vitoria/TelaVitoria.png" id="2_po3aj"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_yxaj2"]
+[ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_5yuw8"]
+[ext_resource type="AudioStream" uid="uid://chvqbupngy33l" path="res://Assets/Sons/Musica/GameWin.mp3" id="5_3kot3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0m0h4"]
 font = ExtResource("3_yxaj2")
@@ -73,5 +75,16 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Sair do Jogo"
 
+[node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=351980834]
+stream = ExtResource("4_5yuw8")
+volume_db = -25.0
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=36970749]
+stream = ExtResource("5_3kot3")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="mouse_entered" from="VBoxContainer/BtnMenu" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/BtnSair" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnSair" to="." method="_on_btn_sair_pressed"]

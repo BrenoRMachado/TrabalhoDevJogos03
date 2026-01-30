@@ -4,6 +4,8 @@ extends Control
 # O "*.tscn" filtra para só aceitar arquivos de cena.
 @export_file("*.tscn") var cena_do_jogo 
 @export_file("*.tscn") var cena_dos_creditos
+@onready var sfx_hover = $SfxHover
+
 
 func _ready():
 	# IMPORTANTE PARA SHOOTER 3D:
@@ -25,3 +27,12 @@ func _on_btn_creditos_pressed():
 func _on_btn_sair_pressed():
 	# Fecha o jogo
 	get_tree().quit()
+
+# --- FUNÇÃO DO SOM DE HOVER ---
+# Esta é a função que todos os botões vão usar
+func _on_botao_mouse_entered():
+	# Dica Pro: Variar levemente o tom (pitch) deixa o som menos robótico
+	sfx_hover.pitch_scale = randf_range(0.9, 1.1) 
+	
+	# Toca o som
+	sfx_hover.play()
