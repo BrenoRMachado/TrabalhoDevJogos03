@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player/Player.tscn" id="2_5mohv"]
+[ext_resource type="PackedScene" uid="uid://du51qxu4nq81c" path="res://Cenas/Arqueiro/Inimigo_Arqueiro.tscn" id="3_5mohv"]
+[ext_resource type="PackedScene" uid="uid://buukrus7chx1b" path="res://Cenas/Cavaleiro/Inimigo_Guerreiro.tscn" id="4_jnpaf"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
 
@@ -30,6 +32,13 @@ autoplay = true
 
 [node name="Player" parent="." unique_id=825621865 instance=ExtResource("2_5mohv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77181756, 0)
+
+[node name="CharacterBody3D" parent="." unique_id=986301789 node_paths=PackedStringArray("player") instance=ExtResource("3_5mohv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.259676)
+player = NodePath("../Player")
+
+[node name="CharacterBody3D2" parent="." unique_id=2115579230 node_paths=PackedStringArray("player") instance=ExtResource("4_jnpaf")]
+player = NodePath("../Player")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1945084406]
 navigation_mesh = SubResource("NavigationMesh_5mohv")

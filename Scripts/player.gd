@@ -18,6 +18,7 @@ const CENA_FLECHA = preload("res://Cenas/Player/Flecha.tscn")
 var gravidade = ProjectSettings.get_setting("physics/3d/default_gravity")
 var esta_atacando = false
 var esta_pulando = false
+var esta_apanhando = false
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -63,14 +64,14 @@ func movimento(delta: float) -> void:
 		var alvo_rotacao = atan2(direcao.x, direcao.z)
 		visual.rotation.y = lerp_angle(visual.rotation.y, alvo_rotacao, delta * 10.0)
 		
-		if not esta_atacando and not esta_pulando:
+		if not esta_atacando and not esta_pulando and not esta_apanhando:
 			animacao.play("Rig_Medium_MovementBasic/Running_A")
 	
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidade_atual)
 		velocity.z = move_toward(velocity.z, 0, velocidade_atual)
 		
-		if not esta_atacando and not esta_pulando:
+		if not esta_atacando and not esta_pulando and not esta_apanhando:
 			animacao.play("Rig_Medium_General/Idle_A")
 
 func ataque():
@@ -91,9 +92,14 @@ func ataque():
 	
 func receber_dano():
 	vida -= 1
+	esta_apanhando = true
 	print("Player recebeu dano! Vida restante: ", vida)
 	animacao.play("Rig_Medium_General/Hit_A")
+	
 	if vida <= 0:
 		animacao.play("Rig_Medium_General/Death_A")
 		await animacao.animation_finished
 		get_tree().change_scene_to_file("res://Cenas/Telas/tela_game_over.tscn")
+	else:
+		await animacao.animation_finished
+		esta_apanhando = false

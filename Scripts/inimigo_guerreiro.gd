@@ -9,6 +9,8 @@ extends CharacterBody3D
 @onready var pathfinding = $NavigationAgent3D
 @onready var visual = $Knight
 @onready var animacao = $Knight/AnimationPlayer
+@onready var espada = $Knight/Rig_Medium/Skeleton3D/BoneAttachment3D/sword_1handed2/Area3D
+@onready var colisao_espada = $Knight/Rig_Medium/Skeleton3D/BoneAttachment3D/sword_1handed2/Area3D/CollisionShape3D
 
 var selection = SelectorNode.new(self)
 var pode_atacar = true
@@ -16,6 +18,9 @@ var pode_atacar = true
 func _ready() -> void:
 	var no_atacar = Atacar.new(self)
 	var no_perseguir = Perseguir.new(self)
+	
+	colisao_espada.disabled = true
+	espada.body_entered.connect(_on_espada_body_entered)
 	
 	selection.add_child(no_atacar)
 	selection.add_child(no_perseguir)
@@ -43,6 +48,11 @@ func player_perto():
 	var distancia = global_position.distance_to(player.global_position)
 	return distancia <= distancia_ataque
 
+func _on_espada_body_entered(body):
+	if body == player and body.has_method("receber_dano"):
+		body.receber_dano()
+		colisao_espada.set_deferred("disabled", true)
+
 func atacar():
 	if not pode_atacar:
 		return
@@ -54,9 +64,12 @@ func atacar():
 	visual.rotate_object_local(Vector3.UP, PI)
 	animacao.play("Rig_Medium_General/Throw")
 	
+	colisao_espada.disabled = false
+	
 	pode_atacar = false
 	await animacao.animation_finished
 	animacao.play("Rig_Medium_General/Idle_A")
+	colisao_espada.disabled = true
 	await get_tree().create_timer(2.0).timeout
 	pode_atacar = true
 	
