@@ -1,17 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvol50v2cgqwj"]
+[gd_scene format=3 uid="uid://bvol50v2cgqwj"]
 
 [ext_resource type="PackedScene" uid="uid://4cmkb1lsnont" path="res://Assets/Player/Skeleton_Rogue.glb" id="1_6pg28"]
 [ext_resource type="AnimationLibrary" uid="uid://vtp4xpihxg5a" path="res://Assets/Player/Rig_Medium_General.glb" id="2_p5mw6"]
 [ext_resource type="AnimationLibrary" uid="uid://cc3x5admigosl" path="res://Assets/Player/Rig_Medium_MovementBasic.glb" id="3_i6dg1"]
 [ext_resource type="PackedScene" uid="uid://012ha33mmnlw" path="res://Assets/Player/Skeleton_Crossbow.gltf" id="4_kvfte"]
 
-[node name="Skeleton_Rogue" instance=ExtResource("1_6pg28")]
+[node name="Skeleton_Rogue" unique_id=1368008887 instance=ExtResource("1_6pg28")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
-libraries = {
-&"Rig_Medium_General": ExtResource("2_p5mw6"),
-&"Rig_Medium_MovementBasic": ExtResource("3_i6dg1")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0" unique_id=1866390435]
+libraries/Rig_Medium_General = ExtResource("2_p5mw6")
+libraries/Rig_Medium_MovementBasic = ExtResource("3_i6dg1")
 
 [node name="Skeleton3D" parent="Rig_Medium" index="0"]
 bones/1/position = Vector3(0, 0.39206383, 0)
@@ -72,13 +70,13 @@ transform = Transform3D(0.99972045, -1.4014349e-09, 0.023646593, 1.3934147e-09, 
 [node name="chest" parent="Rig_Medium/Skeleton3D" index="1"]
 transform = Transform3D(0.9962749, -5.1496167e-09, 0.08623532, 5.1304343e-09, 0.9999999, 4.4407708e-10, -0.08623532, 1.8800718e-15, 0.9962749, -2.9196552e-09, 0.9590293, 1.0685902e-15)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" index="10"]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Rig_Medium/Skeleton3D" index="10" unique_id=483303344]
 transform = Transform3D(0.14989421, 6.2584877e-07, -0.9887016, -8.940697e-08, -0.9999989, 8.940697e-08, -0.9887013, -4.7683716e-07, -0.14989488, -0.54791117, 0.73715496, 0.097976506)
 bone_name = "hand.r"
 bone_idx = 17
 
-[node name="Skeleton_Crossbow2" parent="Rig_Medium/Skeleton3D/BoneAttachment3D" index="0" instance=ExtResource("4_kvfte")]
+[node name="Skeleton_Crossbow2" parent="Rig_Medium/Skeleton3D/BoneAttachment3D" index="0" unique_id=1219590771 instance=ExtResource("4_kvfte")]
 transform = Transform3D(-0.1800333, 0.42489994, -0.88715935, 0.014550066, 0.902947, 0.4295091, 0.9835543, 0.0644176, -0.16874278, 0.057675138, 0.087537885, 0.008744001)
 
-[node name="Arrow_Spawn" type="Marker3D" parent="Rig_Medium/Skeleton3D/BoneAttachment3D/Skeleton_Crossbow2" index="1"]
+[node name="Arrow_Spawn" type="Marker3D" parent="Rig_Medium/Skeleton3D/BoneAttachment3D/Skeleton_Crossbow2" index="1" unique_id=1578258935]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.10210854, 0.7775805)
