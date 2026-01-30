@@ -11,7 +11,7 @@
 libraries/Rig_Medium_General = ExtResource("2_62xta")
 libraries/Rig_Medium_MovementBasic = ExtResource("3_uh2ki")
 
-[node name="Skeleton3D" parent="Rig_Medium" index="0"]
+[node name="Skeleton3D" parent="Rig_Medium" parent_id_path=PackedInt32Array(944803505) index="0" unique_id=1708537507]
 bones/1/position = Vector3(0, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)

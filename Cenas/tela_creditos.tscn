@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1ohrk405xgge"]
 
-[ext_resource type="Script" uid="uid://bt2bo78gd4brw" path="res://Cenas/tela_creditos.gd" id="1_ep8v7"]
+[ext_resource type="Script" uid="uid://bt2bo78gd4brw" path="res://Scripts/tela_creditos.gd" id="1_ep8v7"]
 [ext_resource type="Texture2D" uid="uid://dimsqf3gqik55" path="res://Assets/Creditos/TelaCreditos.png" id="2_uelup"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_ls7gg"]
 

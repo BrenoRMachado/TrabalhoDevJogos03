@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxcy5omme5psw"]
 
-[ext_resource type="Script" uid="uid://bhn204tads38g" path="res://Cenas/tela_game_over.gd" id="1_k17kg"]
+[ext_resource type="Script" uid="uid://bhn204tads38g" path="res://Scripts/tela_game_over.gd" id="1_k17kg"]
 [ext_resource type="Texture2D" uid="uid://cbtglje8auacc" path="res://Assets/GameOver/DerrotaJogo.png" id="2_jos3i"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_k6eyx"]
 
