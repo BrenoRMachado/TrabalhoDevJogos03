@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://rfxll5fha7qu"]
+
+[ext_resource type="PackedScene" uid="uid://bw5siv70b6aer" path="res://Assets/Inimigos/Cavaleiro/Itens/sword_1handed.gltf" id="1_uqo7e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqo7e"]
+size = Vector3(0.495636, 1.7879791, 0.38952637)
+
+[node name="sword_1handed2" unique_id=761870841 instance=ExtResource("1_uqo7e")]
+
+[node name="Area3D" type="Area3D" parent="." index="0" unique_id=1064765894]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=860030500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011367798, 0.5173416, -0.0064086914)
+shape = SubResource("BoxShape3D_uqo7e")
