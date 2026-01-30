@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
 [ext_resource type="PackedScene" uid="uid://du51qxu4nq81c" path="res://Cenas/Arqueiro/Inimigo_Arqueiro.tscn" id="1_ujeci"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player/Player.tscn" id="2_5mohv"]
+[ext_resource type="PackedScene" uid="uid://buukrus7chx1b" path="res://Cenas/Cavaleiro/Inimigo_Guerreiro.tscn" id="2_bkwsa"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
 
@@ -10,24 +11,58 @@
 script/source = "extends Node
 
 # No Inspetor, arraste o arquivo Inimigo_Arqueiro.tscn para cá
-@export var cena_arqueiro: PackedScene 
+@export var cena_arqueiro: PackedScene
+@export var cena_cavaleiro : PackedScene
 @export var player_main : CharacterBody3D
 
 @onready var spawn_points = $SpawnPoints
 
+var onda_atual = 1
+var inimigos_vivos = 0
+
 func _ready():
 	await get_tree().create_timer(3.0).timeout
-	spawnar_nos_pontos()
+	iniciar_onda()
 
-func spawnar_nos_pontos():
+func iniciar_onda():
 	var pontos = spawn_points.get_children()
+	inimigos_vivos = pontos.size()
 	
 	for ponto in pontos:
-		if cena_arqueiro:
-			var novo_arqueiro = cena_arqueiro.instantiate()
-			novo_arqueiro.set_player(player_main)
-			add_child(novo_arqueiro)
-			novo_arqueiro.global_transform.origin = ponto.global_transform.origin
+		var inimigo_cena = null
+		
+		if onda_atual == 1:
+			inimigo_cena = cena_cavaleiro
+		elif onda_atual == 2:
+			inimigo_cena = cena_arqueiro
+		elif onda_atual == 3:
+			var lista = [cena_arqueiro, cena_cavaleiro]
+			inimigo_cena = lista.pick_random()
+		
+		if inimigo_cena:
+			var novo_inimigo = inimigo_cena.instantiate()
+			
+			novo_inimigo.player = player_main
+			add_child(novo_inimigo)
+			novo_inimigo.global_position = ponto.global_position
+			
+			novo_inimigo.tree_exited.connect(_on_inimigo_morto)
+
+func _on_inimigo_morto():
+	inimigos_vivos -= 1
+	if inimigos_vivos <= 0:
+		proxima_onda()
+
+func proxima_onda():
+	onda_atual += 1
+	if onda_atual <=3:
+		await get_tree().create_timer(3.0).timeout
+		iniciar_onda()
+	else:
+		vitoria()
+
+func vitoria():
+	get_tree().change_scene_to_file(\"res://Cenas/Telas/tela_vitoria.tscn\")
 "
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5mohv"]
@@ -49,6 +84,7 @@ tonemap_mode = 2
 [node name="Node" type="Node" unique_id=561467103 node_paths=PackedStringArray("player_main")]
 script = SubResource("GDScript_qtva1")
 cena_arqueiro = ExtResource("1_ujeci")
+cena_cavaleiro = ExtResource("2_bkwsa")
 player_main = NodePath("Player")
 
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=627705422]
@@ -72,13 +108,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2863297, 0, 33.808384)
 [node name="inimigo2" type="Marker3D" parent="SpawnPoints" unique_id=469035067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.693874, 0, 0)
 
-[node name="inimgo3" type="Marker3D" parent="SpawnPoints" unique_id=1283992086]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1078463, 0, 9.001104)
-
-[node name="inimigo4" type="Marker3D" parent="SpawnPoints" unique_id=624260257]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.221885, 0, 10.850341)
-
-[node name="inimigo5" type="Marker3D" parent="SpawnPoints" unique_id=673652850]
+[node name="inimigo3" type="Marker3D" parent="SpawnPoints" unique_id=673652850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.890423, 0, -8.256617)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1213566444]
