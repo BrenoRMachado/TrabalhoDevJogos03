@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bxrshdh4o4vfn"]
+
+[ext_resource type="Script" uid="uid://dq7w823g1vs82" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="PackedScene" path="res://Cenas/Esqueleto.tscn" id="1_xhfnw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
+radius = 0.609375
+height = 2.3043213
+
+[node name="Player" type="CharacterBody3D" unique_id=882221339]
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=474318523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.128479, 0)
+shape = SubResource("CapsuleShape3D_kpjcp")
+
+[node name="Skeleton_Rogue" parent="." unique_id=1320031613 instance=ExtResource("1_xhfnw")]
+
+[node name="CameraCentro" type="Node3D" parent="." unique_id=1624193190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97366667, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraCentro" unique_id=100138100]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraCentro/SpringArm3D" unique_id=269986939]
