@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://tohj82mh5ufs" path="res://Cenas/Cenario/Tardis/tardis.tscn" id="3_avuae"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_avuae"]
-size = Vector3(92.70935, 1, 92.254395)
+size = Vector3(109.53778, 1, 115.752686)
 
 [node name="Castelo" unique_id=1568044996 instance=ExtResource("1_66k3x")]
 script = ExtResource("2_3aanm")
@@ -86,5 +86,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8926973, 0, 46.3972)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.725874, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=480724552]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4866333, 0, 9.218018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9275818, 0, -2.531128)
 shape = SubResource("BoxShape3D_avuae")
