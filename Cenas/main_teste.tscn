@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b0cxaioh8mpij"]
+[gd_scene format=3 uid="uid://bmf8yyjp1rhmi"]
 
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player.tscn" id="2_5mohv"]
