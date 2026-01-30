@@ -8,7 +8,7 @@ func _ready():
 
 func _on_btn_reiniciar_pressed():
 	# Recarrega a cena atual (o jogo recomeça)
-	get_tree().change_scene_to_file("res://Cenas/Jogo/main_teste.tscn")
+	get_tree().change_scene_to_file("res://Cenas/Jogo/main.tscn")
 
 func _on_btn_menu_pressed():
 	# Troca para o menu principal

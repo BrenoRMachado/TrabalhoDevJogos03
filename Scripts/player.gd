@@ -94,12 +94,15 @@ func receber_dano():
 	vida -= 1
 	esta_apanhando = true
 	print("Player recebeu dano! Vida restante: ", vida)
+	var tree = get_tree()
+	
 	animacao.play("Rig_Medium_General/Hit_A")
 	
 	if vida <= 0:
 		animacao.play("Rig_Medium_General/Death_A")
 		await animacao.animation_finished
-		get_tree().change_scene_to_file("res://Cenas/Telas/tela_game_over.tscn")
+		if tree:
+			tree.change_scene_to_file("res://Cenas/Telas/tela_game_over.tscn")
 	else:
 		await animacao.animation_finished
 		esta_apanhando = false

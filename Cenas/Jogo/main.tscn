@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmf8yyjp1rhmi"]
 
 [ext_resource type="PackedScene" uid="uid://br5jpf1ne6v8r" path="res://Cenas/Cenario/Castelo/Castelo.tscn" id="1_7e845"]
+[ext_resource type="PackedScene" uid="uid://du51qxu4nq81c" path="res://Cenas/Arqueiro/Inimigo_Arqueiro.tscn" id="1_ujeci"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player/Player.tscn" id="2_5mohv"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
@@ -10,31 +11,23 @@ script/source = "extends Node
 
 # No Inspetor, arraste o arquivo Inimigo_Arqueiro.tscn para cá
 @export var cena_arqueiro: PackedScene 
+@export var player_main : CharacterBody3D
 
 @onready var spawn_points = $SpawnPoints
 
 func _ready():
-	# Espera 1 segundo para o mapa carregar e evitar crashes de posição
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	spawnar_nos_pontos()
 
 func spawnar_nos_pontos():
-	# Pega todos os Marker3D que você colocou dentro do nó SpawnPoints
 	var pontos = spawn_points.get_children()
 	
 	for ponto in pontos:
 		if cena_arqueiro:
 			var novo_arqueiro = cena_arqueiro.instantiate()
-			
-			# Adiciona o inimigo na cena (como filho da própria Main)
+			novo_arqueiro.set_player(player_main)
 			add_child(novo_arqueiro)
-			
-			# Define a posição dele IGUAL à posição do Marker3D
-			novo_arqueiro.global_position = ponto.global_position
-			
-			print(\"Inimigo criado em: \", ponto.name)
-		else:
-			print(\"ERRO: Você esqueceu de arrastar a cena do Arqueiro no Inspetor!\")
+			novo_arqueiro.global_transform.origin = ponto.global_transform.origin
 "
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5mohv"]
@@ -53,8 +46,10 @@ ambient_light_source = 3
 ambient_light_color = Color(0.44524276, 0.7532518, 1, 1)
 tonemap_mode = 2
 
-[node name="Node" type="Node" unique_id=561467103]
+[node name="Node" type="Node" unique_id=561467103 node_paths=PackedStringArray("player_main")]
 script = SubResource("GDScript_qtva1")
+cena_arqueiro = ExtResource("1_ujeci")
+player_main = NodePath("Player")
 
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=627705422]
 stream = ExtResource("5_b43sg")
@@ -62,7 +57,7 @@ volume_db = -20.0
 autoplay = true
 
 [node name="Player" parent="." unique_id=825621865 instance=ExtResource("2_5mohv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77181756, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5966016, 7.203039)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1945084406]
 navigation_mesh = SubResource("NavigationMesh_5mohv")

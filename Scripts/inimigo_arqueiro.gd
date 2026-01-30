@@ -28,6 +28,8 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func caminhar():
+	if not is_instance_valid(player):
+		return
 	
 	pathfinding.target_position = player.global_position
 	var proximo_ponto = pathfinding.get_next_path_position()
@@ -44,6 +46,9 @@ func caminhar():
 func player_perto():
 	var distancia = global_position.distance_to(player.global_position)
 	return distancia <= distancia_ataque
+
+func set_player(player_novo):
+	player = player_novo
 
 func atacar():
 	if not pode_atirar:

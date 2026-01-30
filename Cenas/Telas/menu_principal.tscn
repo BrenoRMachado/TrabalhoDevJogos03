@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ul6ys")
-cena_do_jogo = "uid://tfai8i3hmmv4"
+cena_do_jogo = "uid://bmf8yyjp1rhmi"
 cena_dos_creditos = "uid://d1ohrk405xgge"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=213042363]
