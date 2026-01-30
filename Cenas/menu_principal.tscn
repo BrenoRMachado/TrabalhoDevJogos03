@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4p15ma5qhpg2" path="res://Assets/Menu/MenuJogo3.png" id="2_ns3he"]
 [ext_resource type="FontFile" uid="uid://bjp6li56in5vp" path="res://Assets/Menu/Eater-Regular.ttf" id="3_fa1tu"]
 [ext_resource type="AudioStream" uid="uid://cux6e4yapl5jl" path="res://Assets/Sons/Interface/touch.wav" id="4_7f1x0"]
+[ext_resource type="AudioStream" uid="uid://dcme4xkk170p7" path="res://Assets/Sons/Musica/Intro.ogg" id="5_y8dk8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6518"]
 font = ExtResource("3_fa1tu")
@@ -90,6 +91,11 @@ metadata/_edit_use_anchors_ = true
 [node name="SfxHover" type="AudioStreamPlayer" parent="." unique_id=1990971555]
 stream = ExtResource("4_7f1x0")
 volume_db = -25.0
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=1851055726]
+stream = ExtResource("5_y8dk8")
+volume_db = -18.0
+autoplay = true
 
 [connection signal="mouse_entered" from="VBoxContainer/BtnJogar" to="." method="_on_botao_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/BtnJogar" to="." method="_on_btn_jogar_pressed"]
