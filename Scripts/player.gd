@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var spawn_flecha = $Skeleton_Rogue/Rig_Medium/Skeleton3D/BoneAttachment3D/Skeleton_Crossbow2/Arrow_Spawn
 @onready var centro_camera = $CameraCentro
 
+@export var hud : CanvasLayer
 @export var andando = 5.0
 @export var correndo = 8.0
 @export var forca_pulo = 11.0
@@ -93,7 +94,10 @@ func ataque():
 func receber_dano():
 	vida -= 1
 	esta_apanhando = true
-	print("Player recebeu dano! Vida restante: ", vida)
+	
+	if hud and hud.has_method("atualizar_vida"):
+		hud.atualizar_vida(vida)
+	
 	var tree = get_tree()
 	
 	animacao.play("Rig_Medium_General/Hit_A")

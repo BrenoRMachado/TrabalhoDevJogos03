@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://du51qxu4nq81c" path="res://Cenas/Arqueiro/Inimigo_Arqueiro.tscn" id="1_ujeci"]
 [ext_resource type="PackedScene" uid="uid://b8erec1d0nxrx" path="res://Cenas/Player/Player.tscn" id="2_5mohv"]
 [ext_resource type="PackedScene" uid="uid://buukrus7chx1b" path="res://Cenas/Cavaleiro/Inimigo_Guerreiro.tscn" id="2_bkwsa"]
+[ext_resource type="PackedScene" uid="uid://enisiaa0pmox" path="res://Cenas/Telas/hud.tscn" id="4_ujeci"]
 [ext_resource type="AudioStream" uid="uid://bxop5wlp0c8nb" path="res://Assets/Sons/Musica/Background-sound.ogg" id="5_b43sg"]
 [ext_resource type="PackedScene" uid="uid://dwuni6iiumepi" path="res://Cenas/Telas/menu_pausa.tscn" id="5_bygio"]
 
@@ -93,13 +94,16 @@ cena_arqueiro = ExtResource("1_ujeci")
 cena_cavaleiro = ExtResource("2_bkwsa")
 player_main = NodePath("Player")
 
+[node name="HUD" parent="." unique_id=979894810 instance=ExtResource("4_ujeci")]
+
 [node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=627705422]
 stream = ExtResource("5_b43sg")
 volume_db = -20.0
 autoplay = true
 
-[node name="Player" parent="." unique_id=825621865 instance=ExtResource("2_5mohv")]
+[node name="Player" parent="." unique_id=825621865 node_paths=PackedStringArray("hud") instance=ExtResource("2_5mohv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5966016, 7.203039)
+hud = NodePath("../HUD")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1945084406]
 navigation_mesh = SubResource("NavigationMesh_5mohv")
