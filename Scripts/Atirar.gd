@@ -1,4 +1,4 @@
-class_name Atirar
+class_name Atacar
 extends BehaviourTreeNode
 
 func process() -> bool:

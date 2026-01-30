@@ -5,16 +5,18 @@ extends CharacterBody3D
 @export var distancia_ataque = 10.0
 @export var vida = 3
 @export var player : CharacterBody3D
+@export var CENA_FLECHA : PackedScene = preload("res://Cenas/Flecha.tscn")
 
 @onready var pathfinding = $NavigationAgent3D
 @onready var visual = $Ranger
 @onready var animacao = $Ranger/AnimationPlayer
+@onready var spawn_flecha = $Ranger/Rig_Medium/Skeleton3D/BoneAttachment3D/crossbow_1handed2/Arrow_Spawn
 
 var selection = SelectorNode.new(self)
 var pode_atirar = true
 
 func _ready() -> void:
-	var no_atirar = Atirar.new(self)
+	var no_atirar = Atacar.new(self)
 	var no_perseguir = Perseguir.new(self)
 	
 	selection.add_child(no_atirar)
@@ -36,6 +38,7 @@ func caminhar():
 	
 	if velocity.length() > 0.1:
 		visual.look_at(global_position + Vector3(velocity.x, 0, velocity.z), Vector3.UP)
+		visual.rotate_object_local(Vector3.UP, PI)
 		animacao.play("Rig_Medium_MovementBasic/Running_A")
 
 func player_perto():
@@ -49,10 +52,18 @@ func atacar():
 	velocity.x = 0
 	velocity.z = 0
 	
-	visual.look_at(Vector3(player.global_position.x, global_position.y, global_position.z), Vector3.UP)
+	var direcao_ao_player = global_position.direction_to(player.global_position)
+	visual.look_at(global_position + direcao_ao_player, Vector3.UP)
+	visual.rotate_object_local(Vector3.UP, PI)
 	animacao.play("Rig_Medium_General/Interact")
 	
-	#Logica_flecha
+	var flecha = CENA_FLECHA.instantiate()
+	get_tree().root.add_child(flecha)
+	flecha.global_position = spawn_flecha.global_position
+	var alvo_horizontal = Vector3(player.global_position.x, spawn_flecha.global_position.y, player.global_position.z)
+	flecha.look_at(alvo_horizontal, Vector3.UP)
+	flecha.rotate_object_local(Vector3.UP, PI)
+	flecha.rotate_object_local(Vector3.RIGHT, deg_to_rad(-90))
 	
 	pode_atirar = false
 	await animacao.animation_finished
