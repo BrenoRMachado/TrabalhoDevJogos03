@@ -4,6 +4,8 @@ extends CharacterBody3D
 @onready var animacao = $Skeleton_Rogue/AnimationPlayer
 @onready var spawn_flecha = $Skeleton_Rogue/Rig_Medium/Skeleton3D/BoneAttachment3D/Skeleton_Crossbow2/Arrow_Spawn
 @onready var centro_camera = $CameraCentro
+@onready var som_dano = $SomDano
+@onready var som_tiro = $SomTiro
 
 @export var hud : CanvasLayer
 @export var andando = 5.0
@@ -77,6 +79,11 @@ func movimento(delta: float) -> void:
 
 func ataque():
 	esta_atacando = true
+	
+	if som_tiro:
+		som_tiro.pitch_scale = randf_range(0.9, 1.1) 
+		som_tiro.play()
+		
 	animacao.play("Rig_Medium_General/Interact")
 	
 	var flecha = CENA_FLECHA.instantiate()
@@ -94,6 +101,9 @@ func ataque():
 func receber_dano():
 	vida -= 1
 	esta_apanhando = true
+	
+	if som_dano:
+		som_dano.play()
 	
 	if hud and hud.has_method("atualizar_vida"):
 		hud.atualizar_vida(vida)

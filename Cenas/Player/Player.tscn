@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dq7w823g1vs82" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="PackedScene" uid="uid://bvol50v2cgqwj" path="res://Cenas/Player/Esqueleto.tscn" id="1_xhfnw"]
+[ext_resource type="AudioStream" uid="uid://dubyf7n7wwleg" path="res://Assets/Sons/Dano/demage-player.mp3" id="3_r8ryd"]
+[ext_resource type="AudioStream" uid="uid://p7326f0wremr" path="res://Assets/Sons/Golpes/Arrow.mp3" id="4_5akqg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
 radius = 0.609375
@@ -25,3 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04592049, 1.6237311, 0)
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraCentro/SpringArm3D" unique_id=2101622809]
+
+[node name="SomDano" type="AudioStreamPlayer3D" parent="." unique_id=1420310435]
+stream = ExtResource("3_r8ryd")
+volume_db = -21.961
+
+[node name="SomTiro" type="AudioStreamPlayer3D" parent="." unique_id=1163134238]
+stream = ExtResource("4_5akqg")
+volume_db = -20.392

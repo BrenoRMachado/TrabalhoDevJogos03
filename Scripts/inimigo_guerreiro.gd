@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 @export var velocidade = 3.0
-@export var distancia_ataque = 1.5
+@export var distancia_ataque = 0.8
 @export var vida = 3
 @export var player : CharacterBody3D
 var esta_morto = false
@@ -12,6 +12,8 @@ var esta_morto = false
 @onready var animacao = $Knight/AnimationPlayer
 @onready var espada = $Knight/Rig_Medium/Skeleton3D/BoneAttachment3D/sword_1handed2/Area3D
 @onready var colisao_espada = $Knight/Rig_Medium/Skeleton3D/BoneAttachment3D/sword_1handed2/Area3D/CollisionShape3D
+@onready var som_ataque = $SomAtaque
+@onready var som_dano = $SomDano
 
 var selection = SelectorNode.new(self)
 var pode_atacar = true
@@ -68,6 +70,10 @@ func atacar():
 	visual.rotate_object_local(Vector3.UP, PI)
 	animacao.play("Rig_Medium_General/Throw")
 	
+	if som_ataque:
+		som_ataque.pitch_scale = randf_range(0.8, 1.2) # Variedade no som
+		som_ataque.play()
+	
 	colisao_espada.disabled = false
 	
 	pode_atacar = false
@@ -82,6 +88,10 @@ func receber_dano():
 		return
 
 	vida -= 1
+	
+	if som_dano:
+		som_dano.play()
+	
 	print("Inimigo atingido! Vida: ", vida)
 	animacao.play("Rig_Medium_General/Hit_A")
 	

@@ -13,6 +13,7 @@ var esta_morto = false
 @onready var animacao = $Ranger/AnimationPlayer
 @onready var spawn_flecha = $Ranger/Rig_Medium/Skeleton3D/BoneAttachment3D/crossbow_1handed2/Arrow_Spawn
 
+
 var selection = SelectorNode.new(self)
 var pode_atirar = true
 

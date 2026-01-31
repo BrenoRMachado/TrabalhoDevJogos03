@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dk3ldc06ntwi4" path="res://Scripts/inimigo_guerreiro.gd" id="1_7684j"]
 [ext_resource type="PackedScene" uid="uid://s6y8r8amebxs" path="res://Cenas/Cavaleiro/Cavaleiro.tscn" id="2_7684j"]
+[ext_resource type="AudioStream" uid="uid://dp4i3t7nekf6t" path="res://Assets/Sons/Dano/demage-enemy.mp3" id="3_fgevw"]
+[ext_resource type="AudioStream" uid="uid://d1lc6xlpef24f" path="res://Assets/Sons/Golpes/sword.mp3" id="4_j04ea"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_541s1"]
 radius = 0.5463867
@@ -20,3 +22,11 @@ shape = SubResource("CapsuleShape3D_541s1")
 [node name="Knight" parent="." unique_id=88324054 instance=ExtResource("2_7684j")]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1910121705]
+
+[node name="SomDano" type="AudioStreamPlayer3D" parent="." unique_id=1755026571]
+stream = ExtResource("3_fgevw")
+volume_db = -10.98
+
+[node name="SomAtaque" type="AudioStreamPlayer3D" parent="." unique_id=1205328248]
+stream = ExtResource("4_j04ea")
+volume_db = -3.137
